@@ -14,19 +14,43 @@ public class task2 {
 				array[i][j] = x;
 			}
 		}
-		int system = 0;
+		int line = 0;
+		int number_len = 0;
+		int flag = 0;
+		int con = 0;
 		for (int i = 0; i < n; i++) {
-			if (system == 1) {
+			if (con == 1) {
+				break;
+			}
+			if (flag == 1) {
+				System.out.println("False");
 				break;
 			}
 			for (int j = 0; j < n; j++) {
-				if (array[i][j] % 2 != 0) {
-					System.out.println("False");
-					system = 1;
+				number = 0;
+				if (flag == 1) {
 					break;
 				}
-				if (i + 1 == n && j + 1 == n) {
+				number_len = 0;
+				while (array[i][j] > 0) {
+					number_len += 1;
+					if ((array[i][j]%10)%2 == 0) {
+						number += 1;
+						array[i][j] = array[i][j]/10;
+					} else {
+						break;
+					}
+				}
+				if (number_len == number) {
+					line += 1;
+				}
+				if (line != 1) {
+					flag = 1;
+					break;
+				}
+				if (j + 1 == n) {
 					System.out.println("True");
+					con = 1;
 				}
 			}
 		}

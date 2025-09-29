@@ -14,17 +14,22 @@ public class task1 {
 				array[i][j] = x;
 			}
 		}
+		int flag = 0;
 		for (int i = 0; i < n; i++) {
 			number = 0;
+			if (flag == 1) {
+				break;
+			}
 			for (int j = 0; j < n; j++) {
 				if (array[j][i] % 3 == 0) {
 					number += 1;
 				}
-				if (number == 3) {
+				if (number == n) {
 					System.out.println("True");
+					flag = 1;
 					break;
 				}
-				if (i - 1 == n && j - 1 == n) {
+				if (i + 1 == n && j + 1 == n) {
 					System.out.println("False");
 				}
 			}
