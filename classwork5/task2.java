@@ -16,7 +16,7 @@ public class task2 {
             for (int j = 0; j < n; j++) {
                 int number = t % 10;
                 t = t / 10;
-                result = glasnie[number % glasnie.length] + result;
+                result = glasnie[number] + result;
             }
             
             System.out.println(result);
