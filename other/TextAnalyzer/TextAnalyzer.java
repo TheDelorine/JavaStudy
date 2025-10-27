@@ -63,7 +63,7 @@ public class TextAnalyzer {
 	public static void findCapitalizedWords(String[] text, int len) {
 		int count = 0;
 		for (int i = 0; i < len; i++) {
-			if (text[i].matches("[A-Z][a-z]*|[А-Я][а-я]*|[A-Z][a-z]*[—][a-z]*|[А-Я][а-я]*[—][а-я]*")) {
+			if (text[i].matches("[A-Z][a-z]*|[А-Я][а-я]*|[A-Z][a-z]*[—][a-z]*|[А-Я][а-я]*[—][а-я]*") && i != 0) {
 				if (count == 0) {
 					System.out.println("Слова с заглавной буквы:");
 				}
