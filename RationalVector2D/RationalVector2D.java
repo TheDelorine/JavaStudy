@@ -28,7 +28,7 @@ public class RationalVector2D {
 		return Math.sqrt((x.mult(x)).add(y.mult(y)).value());
 	}
 	public double scalarProduct(RationalVector2D vector) {
-		return (x.mult(x)).add(y.mult(y));
+		return (vector.getX().mult(x)).add(vector.getY().mult(y));
 	}
 	public boolean equals(RationalVector2D vector) {
 		boolean flag = true;
