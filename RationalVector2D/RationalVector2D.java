@@ -10,7 +10,7 @@ public class RationalVector2D {
 	}
 
 	public RationalVector2D() {
-		this(RationalFraction(0, 1), RationalFraction(0, 1));
+		this(new RationalFraction(0, 1), new RationalFraction(0, 1));
 	}
 	public RationalVector2D(RationalVector2D x, RationalVector2D y) {
 		this.x = x;

@@ -25,8 +25,8 @@ public class ComplexNumber {
 		this.imaginary = this.imaginary + number.getImaginary();
 	}
 
-	public CompexNumber sub(ComplexNumber number) {
-		return new ComplexNumber(this.real - number.getReal(), this.imaginary - number.getImaginary())
+	public ComplexNumber sub(ComplexNumber number) {
+		return new ComplexNumber(this.real - number.getReal(), this.imaginary - number.getImaginary());
 	}
 
 	public void sub2(ComplexNumber number) {
@@ -53,4 +53,42 @@ public class ComplexNumber {
         this.real = newReal;
         this.imaginary = newImaginary;
     }
+    public ComplexNumber div(ComplexNumber number) {
+    	return new ComplexNumber((real * number.getReal() + imaginary * number.getImaginary()), (number.getReal() * imaginary - real * number.getImaginary()));
+    }
+    public void div2(ComplexNumber number) {
+    	real = real * number.getReal() + imaginary * number.getImaginary();
+    	imaginary = number.getReal() * imaginary - real * number.getImaginary();
+    }
+
+    public double length() {
+    	return Math.sqrt(real*real + imaginary*imaginary);
+    }
+
+    public String toString() {
+    	if (real < 0) {
+    		return imaginary "*i" + real; 
+    	} else {
+    		return imaginary "*i+" + real;
+    	}
+    }
+    public double arg() {
+    	return Math.atan(imaginary, real);
+    }
+    public ComplexNumber pow(double power) {
+    	double r = Math.pow(length(), power);
+    	double im = r * Math.sin(arg() * power);
+    	double re = r * Math.cos(arg() * power);
+    	return new ComplexNumber(re, im);
+    }
+    public boolean equals(ComplexNumber number) {
+    	boolean flag = true;
+    	if (real != number.getReal()) {
+    		flag = false;
+    	}
+    	if (imaginary != number.getImaginary()) {
+    		flag = false;
+    	}
+    	return flag;
+    } 
 }
