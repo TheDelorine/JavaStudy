@@ -12,7 +12,7 @@ public class Main {
                 stack.add(new StackNode(getNumber(inputArray[i])));
             } else {
                 if (stack.getSize() < 2) {
-                    System.out.println("Error");
+                    throw new IllegalArgumentException("Error");
                 } else {
                     int a = stack.getRoot().getValue();
                     int b = stack.getRoot().getPrevious().getValue();
